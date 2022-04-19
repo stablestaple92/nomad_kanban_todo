@@ -4,6 +4,24 @@ import styled from 'styled-components';
 import { toDoState } from './atoms';
 import Board from "./Components/Board";
 
+/**
+ * Kanban To Do Board (Trello Clone Coding)
+ * 
+    코드 챌린지
+    1. 스타일 꾸미기
+    2. 작성한 모든 투두를 localStorage에 저장 및 로드하기
+    3. 작성한 투두 삭제하기
+    4. 보드 생성하기
+    5. 보드끼리도 순서 바꾸기
+
+    추가로 구현해볼 만한 기능
+    1. 보드가 가진 투두 전체 삭제하기
+    2. 보드 삭제하기
+    3. 작성한 투두 수정하기
+    4. 보드 제목 수정하기
+ */
+
+
 const Wrapper = styled.div`
   display: flex;
   max-width: 480px;
@@ -20,6 +38,7 @@ const Boards = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 `;
+
 function App() {
   const [toDos, setToDos] = useRecoilState(toDoState);
   const onDragEnd = (info: DropResult) => {
