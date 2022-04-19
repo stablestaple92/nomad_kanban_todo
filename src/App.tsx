@@ -30,10 +30,11 @@ function App() {
       setToDos((allBoards) => {
         // 1) copy all the toDos
         const boardCopy = [...allBoards[source.droppableId]];
+        const taskObj = boardCopy[source.index];
         // 2) Delete item on source.index
         boardCopy.splice(source.index, 1);
         // 3) put back the item on the destination index
-        boardCopy.splice(destination?.index, 0, draggableId);
+        boardCopy.splice(destination?.index, 0, taskObj);
         
         return {
           ...allBoards,
@@ -46,9 +47,11 @@ function App() {
       setToDos((allBoards) => {
         const sourceBoard = [...allBoards[source.droppableId]];
         const destinationBoard = [...allBoards[destination.droppableId]];
+        const taskObj = sourceBoard[source.index];
+
 
         sourceBoard.splice(source.index, 1);
-        destinationBoard.splice(destination.index, 0, draggableId);
+        destinationBoard.splice(destination.index, 0, taskObj );
 
         return {
           ...allBoards,
