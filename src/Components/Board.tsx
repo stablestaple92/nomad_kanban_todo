@@ -43,6 +43,8 @@ const Form = styled.form`
   width: 100%;
   input {
     width: 100%;
+    height: 30px;
+    padding-left: 8px;
   }
 `;
 
